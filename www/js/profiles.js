@@ -9,7 +9,7 @@ function(t,e){"use strict";function r(t,e){if(!(t instanceof e))throw new TypeEr
 
 (function (){
     var config = {
-        website: 'http://127.0.0.1:8080/www/profile/',
+        website: 'https://dbsgen.github.io/profiles/www/profile/',
         host: "https://mainnet.nebulas.io",
         address: 'n1zv4YirpBMxsUKNx525q1V5Gzub94nYumQ',
         card_width: 230,

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Profiles</title>
+    <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css">
+    <link type="text/css" rel="stylesheet" href="css/routeros.css">
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/highlight.pack.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-light bg-light">
+    <a class="navbar-brand" href="./">
+        Profiles
+    </a>
+    <a href="./post" class="btn btn-outline-primary" data-text="Post">我的信息</a>
+</nav>
+
+<div class="container" style="max-width: 920px">
+    <div class="row mt-4">
+        <h3>这是什么</h3>
+    </div>
+    <div class="row">
+        这是基于Nebulas的Profiles，用于储存您的昵称，头像，简介，用于各个网站使用。你不用为各个不同的网站分别设置自己的信息，只需要设置一次全网即可使用。
+        <br>
+        就想很多区块链网站发布信息的时候还需要现写一个昵称，这种是不合理的，但是要自己做一个用户信息系统有很麻烦。
+        <br>所以才有了这个项目。
+    </div>
+    <div class="row mt-4">
+        <h3>如何使用</h3>
+    </div>
+    <div class="row">
+
+        在页面中引入<a href="js/profiles.js">profiles.js</a>或<a href="js/profiles.min.js">profiles.min.js</a>.简单的调用名片如下,会填入用户名,并且展示一个简单的名片。
+        <pre style="width: 100%"><code class="html">
+&lt;a class=&quot;profile-link&quot; data-wallet=&quot;n1atVgm...&quot; href=&quot;#&quot;&gt;n1atVgm...&lt;/a&gt;
+...
+&lt;script src=&quot;js/nebulas.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;js/profiles.js&quot;&gt;&lt;/script&gt;
+            <br>
+&lt;script&gt;
+Profiles.init();
+&lt;/script&gt;
+        </code></pre>
+
+    </div>
+    <div class="row">
+
+        <a class="btn btn-info profile-link" data-wallet="n1atVgmUM2m2bWMMaDTDhn4T3w2JHnVseTP" href="#">n1atVgmUM2m2bWMMaDTDhn4T3w2JHnVseTP</a>
+        <a class="btn btn-info profile-link" data-wallet="n1TRakxM5EyF29J2mhhuujhq44Pv663rfQr" href="#">n1TRakxM5EyF29J2mhhuujhq44Pv663rfQr</a>
+
+    </div>
+
+    <div class="row mt-2">
+        也可以单独获得用户信息
+        <pre style="width: 100%"><code class="html">
+Profiles.fetch(wallet_address).then(function(res){
+    console.log(res);
+}).catch(function(err) {
+    console.log(err);
+});
+        </code></pre>
+        只需要做一个头像img的情况如下.
+
+        <pre style="width: 100%"><code class="html">
+&lt;img class=&quot;avatar&quot; data-wallet-image=&quot;n1atVgmUM2m2bWMMaDTDhn4T3w2JHnVseTP&quot;/&gt;
+        </code></pre>
+    </div>
+
+    <div class="row">
+        <img class="avatar" data-wallet-image="n1atVgmUM2m2bWMMaDTDhn4T3w2JHnVseTP"/>
+        <img class="avatar" data-wallet-image="n1TRakxM5EyF29J2mhhuujhq44Pv663rfQr"/>
+    </div>
+
+    <div class="row my-4">
+         以上,那么现在在右上角"我的信息"中修改你自己的名片，并保存就可以了。
+    </div>
+</div>
+<script src="js/nebulas.js"></script>
+<script src="js/profiles.js"></script>
+<script>
+    Profiles.init();
+    hljs.initHighlightingOnLoad();
+</script>
+<style>
+    .profile-link {
+        max-width: 88px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        margin-left: 10px;
+    }
+    .avatar {
+        width: 86px;
+        height: 86px;
+        box-shadow: 0 0 2px #aaa;
+        margin: 10px;
+        border-radius: 2px;
+    }
+</style>
+</body>
+</html>

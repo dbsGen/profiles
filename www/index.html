@@ -24,7 +24,7 @@
     <div class="row">
         这是基于Nebulas的Profiles，用于储存您的昵称，头像，简介，用于各个网站使用。你不用为各个不同的网站分别设置自己的信息，只需要设置一次全网即可使用。
         <br>
-        就想很多区块链网站发布信息的时候还需要现写一个昵称，这种是不合理的，但是要自己做一个用户信息系统有很麻烦。
+        就像很多区块链网站发布信息的时候还需要现写一个昵称，这种是不合理的，但是要自己做一个用户信息系统有很麻烦。
         <br>所以才有了这个项目。
     </div>
     <div class="row mt-4">
@@ -41,6 +41,8 @@
             <br>
 &lt;script&gt;
 Profiles.init();
+// ... or...
+Profiles.elem(document.getElementById('...'));
 &lt;/script&gt;
         </code></pre>
 
@@ -54,7 +56,7 @@ Profiles.init();
 
     <div class="row mt-2">
         也可以单独获得用户信息
-        <pre style="width: 100%"><code class="html">
+        <pre style="width: 100%"><code class="sunlight-javascript">
 Profiles.fetch(wallet_address).then(function(res){
     console.log(res);
 }).catch(function(err) {

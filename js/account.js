@@ -4,7 +4,7 @@
 
 var config = {
     host: "https://mainnet.nebulas.io",
-    address: 'n1zv4YirpBMxsUKNx525q1V5Gzub94nYumQ'
+    address: 'n1kcDZ8x1B4qRLe8XkpW137dtGTUqphym5f'
 };
 
 var none = 0;
